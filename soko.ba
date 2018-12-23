@@ -1,0 +1,37 @@
+2 CLEAR512:CALL16959:DEFINTA-Z:DIML$(7),D(3):J$=" ":S$=STRING$(8,"ρ"):FORA=0TO3:READD(A):NEXT:READS:GOSUB11:PRINT@90,"Which puzzle?":PRINT@122,"(Leave empty to start at beginning)"
+3 T=1:PRINT@104,SPACE$(10):PRINT@104,"";:LINEINPUTA$:IFA$<>""THENT=VAL(A$):IFT<1ORT>STHENBEEP:GOTO3
+4 IFM=STHEN10ELSEREADL:FORA=0TOL:READL$(A):NEXT:M=M+1:IFM<TTHEN4ELSEGOSUB11:PRINT@55,USING"Puzzle ##";M:PRINT@121,"Push the blocks ª onto the targets .":PRINT@165,"ESC = quit, ENTER = start over":PRINT@292,"Any key to start";:A$=INPUT$(1)
+5 K=0:P=0:CLS:FORA=0TOL:B=A*40:C=LEN(L$(A)):PRINT@B,L$(A):FORD=BTOB+C-1:E=PEEK(D-512):K=K-(E=148ORE=157):P=P-D*((EXOR109)>253):NEXT:NEXT
+6 IFK=0THEN9ELSEZ=0:A$=INKEY$:IFA$=""THEN6ELSEA=ASC(A$):IFA=13THEN5ELSEIFA=27THENMENUELSEA=A-28:IFA<0ORA>3THEN6ELSEB=P+D(A):IFB<0ORB>319THEN6ELSEC=PEEK(B-512):IFC=239THEN6ELSEZ=C=157:IFZTHEN8
+7 IF(CXOR84)>253THENE=B+D(A):F=PEEK(E-512):G=F=157:IFF=32ORGTHENPRINT@E,CHR$(170-G);:Z=C=171:K=K+G-(C=171)ELSE6
+8 PRINT@P,MID$(J$,1-(PEEK(P-512)=148),1);:P=B:PRINT@P,CHR$(147-Z);:GOTO6
+9 PRINT@95,"π"S$"ς":PRINT@135,"υ Solved υ":PRINT@175,"φ"S$"χ":B=3750:FORA=1TO4:SOUNDB,1:B=B*3\4:NEXT:FORA=1TO1000:IFINKEY$<>""THEN4ELSENEXT:GOTO4
+10 GOSUB11:PRINT@85,"You have completed all puzzles":PRINT@171,"Press a key to end":A$=INPUT$(1):MENU
+11 CLS:PRINT@11," S O K O B A N ›":RETURN
+
+12 DATA 1,-1,-40,40,20
+
+13 DATA 4,"οοοοο","ο“  ο","ο οªοοο","ο ª ο","οοοοοοο"
+14 DATA 6,"οοοο","ο ο","ο  οοο","ο«“  ο","ο  ª ο","ο  οοο","οοοο"
+15 DATA 6,"οοοοοο","ο    ο","ο ο“ ο","ο ª« ο","ο « ο","ο    ο","οοοοοο"
+16 DATA 5,"  οοοο","οοο  οοοο","ο     ª ο","ο ο  οª ο","ο  ο“ ο","οοοοοοοοο"
+17 DATA 5,"οοοοοοοο","ο      ο","ο ««ª“ο","ο      ο","οοοοο  ο","    οοοο"
+18 DATA 6," οοοοοοο"," ο     ο"," ο ª ο","οο ª“ª ο","ο  ª ο","ο      ο","οοοοοοοο"
+19 DATA 5,"οοοοοο οοοοο","ο    οοο   ο","ο ªª     ο“ο","ο ª ο   ο","ο   οοοοοοοο","οοοοο"
+20 DATA 7,"οοοοοοο","ο     ο","ο ª ο","ο ªª ο","ο ª ο","ο ªª ο","ο  “  ο","οοοοοοο"
+21 DATA 7,"οοοο","ο“ ο   οοοοο","οªοοοοο   ο","οª      ο ο","ο  οοοο    ο","οοοο  ο ο οο","      ο   ο","      οοοοο"
+22 DATA 6,"οοοοο","ο  οο","ο“ªª ο","οο   ο"," οο  ο","  οοο","   οοο"
+23 DATA 7,"      οοοοο","      ο  ο","      οο ο","οοοοοοοο ο","ο “ ª ª ª ο","ο ο ο ο οοο","ο       ο","οοοοοοοοο"
+24 DATA 7,"  οοοοοο","  ο    ο","  ο οο“οο","οοο ο ª ο","ο ο ª ο","ο       ο","ο  οοοοοο","οοοο"
+25 DATA 7,"οοοοο","ο   οο","ο ª  ο","οο ª οοοο"," οοο“  ο","  ο  ο ο","  ο     ο","  οοοοοοο"
+26 DATA 5,"οοοοοοο","ο     ο","ο ο ο ο","ο ª«“ο","ο   οοο","οοοοο"
+27 DATA 6,"     οοο","οοοοοο“οο","ο    « ο","ο   ο   ο","οοοοοªο ο","    ο   ο","    οοοοο"
+28 DATA 7," οοοο"," ο  οοοο"," ο     οο","οο οο   ο","ο ο “ªοο","ο   ο ªª ο","ο  ο    ο","οοοοοοοοοο"
+29 DATA 6,"οοοοο","ο “ ο","οο","οªªªοο","ο    ο","ο    ο","οοοοοο"
+30 DATA 5,"οοοο","ο  οοοο","ο   ο","ο ªªο“ο","οο    ο"," οοοοοο"
+31 DATA 6,"οοοοοοο","ο  «  ο","ο     ο","οο ο οο"," οª“ο"," ο   ο"," οοοοο"
+32 DATA 6,"οοοοοο","ο   ο","ο οο οο","ο  ªª“ο","ο ο   ο","ο  οοο","οοοοο"
+33 DATA 6,"  οοοο"," οο  ο","οο“ªοο","ο ªª  ο","ο   ο","οοο   ο","  οοοοο"
+
+
+                                                                             
